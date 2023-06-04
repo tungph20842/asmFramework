@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
 import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { ManageProductComponent } from './pages/admin/manage-product/manage-product.component';
+
 
 
 const routes: Routes = [
@@ -14,8 +14,7 @@ const routes: Routes = [
   {
     path: 'admin', component: LayoutAdminComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'product', component: ManageProductComponent },
+
 
     ],
   },
