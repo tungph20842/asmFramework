@@ -1,15 +1,7 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-4">
-      <ul>
-        <li><a routerLink="dashboard">Dashboard</a></li>
-        <li><a routerLink="product">Product</a></li>
-      </ul>
-    </div>
-    <div class="col-8">
-      <main>
-        <router-outlet />
-      </main>
-    </div>
+<div class="flex">
+  <div class="w-[200px]">layout</div>
+
+  <div class="flex-1">
+    <router-outlet />
   </div>
 </div>
