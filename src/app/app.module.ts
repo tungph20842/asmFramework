@@ -11,12 +11,14 @@ import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.compon
 import { NewProductPageComponent } from './admin/new-product-page/new-product-page.component';
 import { ProductListPageComponent } from './admin/product-list-page/product-list-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { UpdateProductPageComponent } from './admin/update-product-page/update-product-page.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    UpdateProductPageComponent,
     HomePageComponent,
     LayoutAdminComponent,
     NewProductPageComponent,

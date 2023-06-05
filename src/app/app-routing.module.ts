@@ -6,6 +6,7 @@ import { ProductListPageComponent } from './admin/product-list-page/product-list
 import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.component';
 import { NewProductPageComponent } from './admin/new-product-page/new-product-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { UpdateProductPageComponent } from './admin/update-product-page/update-product-page.component';
 
 
 
@@ -14,9 +15,10 @@ const routes: Routes = [
 
   {
     path: 'admin', component: LayoutAdminComponent, children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', component: ProductListPageComponent },
+     
       { path: 'new-product', component: NewProductPageComponent },
-      { path: 'new-product', component: NewProductPageComponent },
+      { path: ':id/edit', component: UpdateProductPageComponent },
 
 
 
