@@ -9,7 +9,7 @@ import { IProduct } from 'src/@types';
 export class ProductService {
   private uri = 'http://localhost:8000';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAllProduct(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.uri + '/products');
@@ -22,5 +22,11 @@ export class ProductService {
   addProduct(data: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>(this.uri + '/products', data);
   }
+  updateProduct(data: IProduct): Observable<IProduct> {
+    return this.http.put<IProduct>(this.uri + '/products/' + data.id, data);
+  }
 
+  deleteProduct(id: string): Observable<IProduct> {
+    return this.http.delete<IProduct>(this.uri + '/products/' + id);
+  }
 }
