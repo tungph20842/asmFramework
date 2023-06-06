@@ -20,6 +20,7 @@ import { UpdateProductPageComponent } from './admin/update-product-page/update-p
     AppComponent,
     UpdateProductPageComponent,
     HomePageComponent,
+    UpdateProductPageComponent,
     LayoutAdminComponent,
     NewProductPageComponent,
     PageNotFoundComponent,
