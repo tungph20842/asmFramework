@@ -18,6 +18,7 @@ import { UpdateProductPageComponent } from './admin/update-product-page/update-p
 @NgModule({
   declarations: [
     AppComponent,
+    UpdateProductPageComponent,
     HomePageComponent,
     UpdateProductPageComponent,
     LayoutAdminComponent,
