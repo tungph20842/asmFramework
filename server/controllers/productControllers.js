@@ -32,3 +32,24 @@ exports.getProductById = (req, res) => {
       });
     });
 };
+// Create a new product
+exports.createProduct = (req, res) => {
+  const { name, description, price, image } = req.body;
+
+  const product = new Product({
+    name,
+    description,
+    price,
+    image,
+  });
+
+  product.save()
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while creating the product.',
+      });
+    });
+};
