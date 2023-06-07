@@ -72,3 +72,22 @@ exports.updateProduct = (req, res) => {
       });
     });
 };
+// Delete a product
+exports.deleteProduct = (req, res) => {
+  const { id } = req.params;
+
+  Product.findByIdAndRemove(id)
+    .then((product) => {
+      if (!product) {
+        return res.status(404).send({
+          message: `Product with id ${id} not found`,
+        });
+      }
+      res.send({ message: 'Product deleted successfully!' });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while deleting the product',
+      });
+    });
+};
