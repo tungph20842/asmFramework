@@ -53,3 +53,22 @@ exports.createProduct = (req, res) => {
       });
     });
 };
+// Update a product
+exports.updateProduct = (req, res) => {
+  const { id } = req.params;
+
+  Product.findByIdAndUpdate(id, req.body, { new: true })
+    .then((product) => {
+      if (!product) {
+        return res.status(404).send({
+          message: `Product with id ${id} not found`,
+        });
+      }
+      res.send(product);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while updating the product',
+      });
+    });
+};
