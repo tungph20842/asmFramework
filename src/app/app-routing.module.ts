@@ -10,6 +10,7 @@ import { UpdateProductPageComponent } from './admin/update-product-page/update-p
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { AuthGuard } from './auth.guard';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 
 
@@ -17,9 +18,8 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: "signup", component: SignupComponent },
   { path: "signin", component: SigninComponent },
-  { path: 'list', component: ProductListPageComponent },
-  { path: 'new-product', component: NewProductPageComponent },
-      { path: ':id/edit', component: UpdateProductPageComponent },
+  { path: 'list', component: ProductDetailsComponent },
+
 
   {
     path: 'admin', component: LayoutAdminComponent,  canActivate: [AuthGuard], children: [

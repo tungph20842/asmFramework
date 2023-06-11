@@ -15,6 +15,7 @@ import { UpdateProductPageComponent } from './admin/update-product-page/update-p
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 
 
@@ -31,6 +32,7 @@ import { AuthInterceptor } from './auth.interceptor';
     ProductListPageComponent,
     SigninComponent,
     SignupComponent,
+    ProductDetailsComponent,
 
   ],
   imports: [
