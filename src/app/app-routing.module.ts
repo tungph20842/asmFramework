@@ -7,14 +7,22 @@ import { LayoutAdminComponent } from './layouts/layout-admin/layout-admin.compon
 import { NewProductPageComponent } from './admin/new-product-page/new-product-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UpdateProductPageComponent } from './admin/update-product-page/update-product-page.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { AuthGuard } from './auth.guard';
 
 
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
+  { path: "signup", component: SignupComponent },
+  { path: "signin", component: SigninComponent },
+  { path: 'list', component: ProductListPageComponent },
+  { path: 'new-product', component: NewProductPageComponent },
+      { path: ':id/edit', component: UpdateProductPageComponent },
 
   {
-    path: 'admin', component: LayoutAdminComponent, children: [
+    path: 'admin', component: LayoutAdminComponent,  canActivate: [AuthGuard], children: [
     { path: '', component: ProductListPageComponent },
       { path: 'new-product', component: NewProductPageComponent },
       { path: ':id/edit', component: UpdateProductPageComponent },

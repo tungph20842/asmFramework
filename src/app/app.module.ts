@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -12,6 +12,10 @@ import { NewProductPageComponent } from './admin/new-product-page/new-product-pa
 import { ProductListPageComponent } from './admin/product-list-page/product-list-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UpdateProductPageComponent } from './admin/update-product-page/update-product-page.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { AuthInterceptor } from './auth.interceptor';
+
 
 
 
@@ -24,7 +28,9 @@ import { UpdateProductPageComponent } from './admin/update-product-page/update-p
     LayoutAdminComponent,
     NewProductPageComponent,
     PageNotFoundComponent,
-    ProductListPageComponent
+    ProductListPageComponent,
+    SigninComponent,
+    SignupComponent,
 
   ],
   imports: [
@@ -34,7 +40,11 @@ import { UpdateProductPageComponent } from './admin/update-product-page/update-p
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,12 +7,12 @@ import { IProduct } from 'src/@types';
   providedIn: 'root',
 })
 export class ProductService {
-  private uri = 'http://localhost:8000';
+  private uri = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
   getAllProduct(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(this.uri + '/products');
+    return this.http.get<IProduct[]>('http://localhost:8080/api/products');
   }
 
   getProductById(id: string): Observable<IProduct> {

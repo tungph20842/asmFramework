@@ -18,7 +18,7 @@ export class NewProductPageComponent {
 
   productForm = this.formBuilder.group({
     name: ['', [Validators.required]],
-    avatar: ['', [Validators.required]],
+    image: ['', [Validators.required]],
     price: [0, [Validators.required]],
   });
 
